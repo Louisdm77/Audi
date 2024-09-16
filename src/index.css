@@ -7,6 +7,9 @@
   src: url(./assets/Roboto-Light.ttf);
 }
 
+#root {
+  max-width: 100%;
+}
 .navv,
 .hero {
   font-family: Roboto !important;

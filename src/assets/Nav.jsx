@@ -1,12 +1,12 @@
 import React from "react";
 import { useState } from "react";
 import { FaFont } from "react-icons/fa";
-import Pic from "./audi.svg";
+import Pic from "../assets/Audi.svg";
 import "animate.css";
-import { FaGlobe } from "react-icons/fa";
-import { FaSearch } from "react-icons/fa";
-import { FaTimes } from "react-icons/fa";
-import { GiHamburgerMenu } from "react-icons/gi";
+import { CiSearch } from "react-icons/ci";
+import { CiGlobe } from "react-icons/ci";
+import { LiaTimesSolid } from "react-icons/lia";
+import { RxHamburgerMenu } from "react-icons/rx";
 
 const Nav = () => {
   const [menu, setMenu] = useState(false);
@@ -34,14 +34,15 @@ const Nav = () => {
                   data-collapse-toggle="mega-menu-full-dropdown"
                   class="flex items-center transition duration-700 ease-in-out justify-between w-full py-2 px-3 font-medium text-gray-900 border-b border-gray-100 md:w-auto hover:bg-gray-50 md:hover:bg-transparent md:border-0  md:p-0 dark:text-white  dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700"
                 >
-                  <GiHamburgerMenu
+                  <RxHamburgerMenu
                     class="animate__animated animate__fadeIn animate__slow"
                     style={{ display: menu ? "none" : "block" }}
                   />
-                  <FaTimes
+                  <LiaTimesSolid
                     class="animate__animated animate__fadeIn animate__slow"
                     style={{ display: !menu ? "none" : "block" }}
-                  />
+                  />{" "}
+                  <span style={{ width: "4px" }}></span>
                   Menu
                 </button>
               </li>
@@ -64,7 +65,7 @@ const Nav = () => {
                         href="javascript:void(0)"
                         class="text-[#007bff] hover:underline"
                       >
-                        <FaSearch
+                        <CiSearch
                           style={{
                             fontSize: "30px",
                             color: "black",
@@ -74,7 +75,7 @@ const Nav = () => {
                       </a>
                     </button>
                     <button class="par  px-4  py-2 text-sm rounded-sm font-bold text-black  transition-all ease-in-out duration-300 hover:bg-transparent hover:text-[#007bff] ">
-                      <FaGlobe style={{ fontSize: "30px" }} />
+                      <CiGlobe style={{ fontSize: "30px" }} />
                     </button>
                   </div>
                 </div>

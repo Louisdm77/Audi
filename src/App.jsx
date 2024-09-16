@@ -4,7 +4,7 @@ import HeroSection from "./assets/Hero";
 
 export default function App() {
   return (
-    <div>
+    <div className="w-full">
       <Nav />
       <HeroSection />
     </div>
