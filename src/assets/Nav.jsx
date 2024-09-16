@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { FaFont } from "react-icons/fa";
-import Pic from "../assets/Audi.svg";
+import Pic from "../assets/audi.svg";
 import "animate.css";
 import { CiSearch } from "react-icons/ci";
 import { CiGlobe } from "react-icons/ci";
