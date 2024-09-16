@@ -1,19 +1,27 @@
 import React from "react";
-
+import Car from "../assets/Car.mp4";
+import Roboto from "../assets/Roboto-Light.ttf";
 const HeroSection = () => {
   return (
     <div>
-      <div class=" relative z-0 bg-gradient-to-r from-purple-600 to-blue-600 h-screen text-white overflow-hidden">
+      <div
+        style={{ fontFamily: { Roboto } }}
+        class="hero relative h-[47vh] z-0 text-white overflow-hidden"
+      >
         <div class="absolute inset-0">
-          <img
-            src="https://img.freepik.com/premium-photo/lineup-electric-cars-car-dealership_1314467-146279.jpg?ga=GA1.1.1053587659.1720895076&semt=ais_hybrid"
+          {/* <img
+            src="https://www.audi.com/content/dam/gbp2/innovation/product-innovation/drive-systems/e-mobility/a6-e-tron-aerodynamics/1920x600_Aerodynamik_TSF5161_01.jpg?imwidth=1920&imdensity=1"
             alt="Background Image"
-            class="object-cover object-center w-full h-full"
-          />
-          {/* <video
-            class="object-cover object-center w-full h-full"
-            src="https://v.ftcdn.net/05/22/38/98/700_F_522389892_Hzeu5a7iWFxP6TxUYoCBadB1G2i7Qy5n_ST.mp4"
-          ></video> */}
+            class="object-cover object-center w-full "
+          /> */}
+          <video
+            class="object-cover object-center w-full "
+            src={Car}
+            autoPlay
+            muted
+            loop
+            playsInline
+          ></video>
 
           <div class="absolute inset-0 bg-black opacity-50"></div>
         </div>
@@ -22,9 +30,7 @@ const HeroSection = () => {
           <h1 class="text-5xl font-bold leading-tight mb-4">
             Audi A6 Sportback e-tron
           </h1>
-          <p class="text-lg text-gray-300 mb-8">
-            The most aerodynamic Audi ever
-          </p>
+          <p class="text-lg text-white mb-8">The most aerodynamic Audi ever</p>
           <a
             href="#"
             class="bg-none text-white hover:border-gray hover:text-gray py-2 px-6 border border-2-white text-lg font-semibold transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg"

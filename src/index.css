@@ -7,7 +7,8 @@
   src: url(./assets/Roboto-Light.ttf);
 }
 
-.navv {
+.navv,
+.hero {
   font-family: Roboto !important;
 }
 @media screen and (max-width: 768px) {
@@ -19,6 +20,9 @@
   }
   .block {
     border-top: 1px solid rgb(214, 212, 212);
+  }
+  .hero img {
+    height: 100%;
   }
 }
 
