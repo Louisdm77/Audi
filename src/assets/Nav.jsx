@@ -8,12 +8,12 @@ import { CiSearch } from "react-icons/ci";
 import { CiGlobe } from "react-icons/ci";
 import { LiaTimesSolid } from "react-icons/lia";
 import { RxHamburgerMenu } from "react-icons/rx";
-import Car from "../assets/Ncar.png";
+import { FaCarSide } from "react-icons/fa";
 
 const Nav = () => {
   const [menu, setMenu] = useState(false);
   const [image, setImage] = useState(Pic);
-
+  const [position, setPosition] = useState("0%");
   const [men, setMen] = useState(false);
 
   return (
@@ -28,27 +28,42 @@ const Nav = () => {
             class="flex items-center justify-between w-full"
           >
             <ul class="flex justify-between w-full items-center mt-4 font-medium md:flex-row md:mt-0 md:space-x-8 rtl:space-x-reverse">
-              <li style={{ fontSize: "25px" }}>
-                <button
-                  onClick={() => {
-                    setMenu(!menu), setMen(false);
-                  }}
-                  id="mega-menu-full-dropdown-button"
-                  data-collapse-toggle="mega-menu-full-dropdown"
-                  class="flex items-center transition duration-700 ease-in-out justify-between w-full py-2 px-3 font-medium text-gray-900 border-b border-gray-100 md:w-auto hover:bg-gray-50 md:hover:bg-transparent md:border-0  md:p-0 dark:text-white  dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700"
-                >
-                  <RxHamburgerMenu
-                    class="animate__animated animate__fadeIn animate__slow"
-                    style={{ display: menu ? "none" : "block" }}
+              <li
+                className="flex"
+                style={{
+                  fontSize: "25px",
+                  width: "55%",
+                }}
+              >
+                <div className="flex items-center" style={{ width: "80%" }}>
+                  <button
+                    onClick={() => {
+                      setMenu(!menu), setMen(false);
+                    }}
+                    id="mega-menu-full-dropdown-button"
+                    data-collapse-toggle="mega-menu-full-dropdown"
+                    class="flex items-center transition duration-700 ease-in-out justify-between w-full py-2 px-3 font-medium text-gray-900 border-b border-gray-100 md:w-auto hover:bg-gray-50 md:hover:bg-transparent md:border-0  md:p-0 dark:text-white  dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700"
+                  >
+                    <RxHamburgerMenu
+                      class="animate__animated animate__fadeIn animate__slow"
+                      style={{ display: menu ? "none" : "block" }}
+                    />
+                    <LiaTimesSolid
+                      class="animate__animated animate__fadeIn animate__slow"
+                      style={{ display: !menu ? "none" : "block" }}
+                    />{" "}
+                    <span style={{ width: "4px" }}></span>
+                  </button>
+                  <FaCarSide
+                    className="car"
+                    style={{
+                      marginLeft: position,
+                      fontSize: "60px ,!important",
+                      position: "relative",
+                      transition: "margin-left 0.5s ease-out",
+                    }}
                   />
-                  <LiaTimesSolid
-                    class="animate__animated animate__fadeIn animate__slow"
-                    style={{ display: !menu ? "none" : "block" }}
-                  />{" "}
-                  <span style={{ width: "4px" }}></span>
-                </button>
-              </li>
-              <li>
+                </div>
                 <img src={Pic} alt="logo" class="w-40 h-14" />
               </li>
 
@@ -100,8 +115,14 @@ const Nav = () => {
             <div class="max-w-screen-xl flex flex-wrap items-center justify-between  mx-auto p-4">
               <div class=" w-full md:block md:w-auto" id="navbar-default">
                 <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
-                  <li className="block" onMouseOver={() => setImage(Imgg)}>
+                  <li className="block ">
                     <a
+                      onMouseEnter={() => {
+                        setPosition("5%");
+                      }}
+                      onMouseLeave={() => {
+                        setPosition("0%");
+                      }}
                       href="#"
                       class="block py-2 px-3 relative  overflow-hidden group text-black-500 transition-all duration-300 ease-in-out
  text-black text-start pb-5 pt-5 
@@ -109,13 +130,19 @@ const Nav = () => {
                       aria-current="page"
                     >
                       {" "}
-                      <span class="z-10 bg-left-bottom text-lg   hover:text-shadow-black bg-gradient-to-r from-black to-black bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out">
+                      <span class="z-10 bg-[length:${position} 2px] bg-left-bottom text-lg   hover:text-shadow-black bg-gradient-to-r from-black to-black bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out">
                         Company
                       </span>
                     </a>
                   </li>
                   <li className="block">
                     <a
+                      onMouseEnter={() => {
+                        setPosition("25%");
+                      }}
+                      onMouseLeave={() => {
+                        setPosition("0%");
+                      }}
                       href="#"
                       class="block py-2 px-3 relative overflow-hidden group text-black-500 transition-all duration-300 ease-in-out
  text-black text-start pb-5 pt-5 
@@ -130,6 +157,12 @@ const Nav = () => {
                   </li>
                   <li className="block">
                     <a
+                      onMouseEnter={() => {
+                        setPosition("47%");
+                      }}
+                      onMouseLeave={() => {
+                        setPosition("0%");
+                      }}
                       href="#"
                       class="block py-2 px-3 relative overflow-hidden  group text-black-500 transition-all duration-300 ease-in-out
  text-black text-start pb-5 pt-5 
@@ -144,6 +177,12 @@ const Nav = () => {
                   </li>
                   <li className="block">
                     <a
+                      onMouseEnter={() => {
+                        setPosition("67%");
+                      }}
+                      onMouseLeave={() => {
+                        setPosition("0%");
+                      }}
                       href="#"
                       class="block py-2 px-3 relative overflow-hidden  group text-black-500 transition-all duration-300 ease-in-out
  text-black text-start pb-5 pt-5 
@@ -158,6 +197,12 @@ const Nav = () => {
                   </li>
                   <li className="block">
                     <a
+                      onMouseEnter={() => {
+                        setPosition("87%");
+                      }}
+                      onMouseLeave={() => {
+                        setPosition("0%");
+                      }}
                       href="#"
                       class="block py-2 px-3 relative overflow-hidden  group text-black-500 transition-all duration-300 ease-in-out
  text-black text-start pb-5 pt-5 

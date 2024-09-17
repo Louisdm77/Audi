@@ -27,6 +27,9 @@
   .hero video {
     height: 100%;
   }
+  .car {
+    display: none;
+  }
 }
 
 par {
