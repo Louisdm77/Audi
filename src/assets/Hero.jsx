@@ -1,12 +1,12 @@
 import React from "react";
-import Car from "../assets/Car.mp4";
-import Roboto from "../assets/Roboto-Light.ttf";
+import Car from "../assets/Audic.mp4";
+import Roboto from "../assets/Poppins-Light.ttf";
 const HeroSection = () => {
   return (
     <div>
       <div
         style={{ fontFamily: { Roboto } }}
-        class="hero relative h-[47vh] z-0 text-white overflow-hidden"
+        class="hero relative h-[90vh] z-0 text-white overflow-hidden"
       >
         <div class="absolute inset-0">
           {/* <img
@@ -30,10 +30,12 @@ const HeroSection = () => {
           <h1 class="text-5xl font-bold leading-tight mb-4">
             Audi A6 Sportback e-tron
           </h1>
-          <p class="text-lg text-white mb-8">The most aerodynamic Audi ever</p>
+          <p class="text-lg text-white mt-8 mb-8">
+            The most aerodynamic Audi ever
+          </p>
           <a
             href="#"
-            class="bg-none text-white hover:border-gray hover:text-gray py-2 px-6 border border-2-white text-lg font-semibold transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg"
+            class="bg-none text-white hover:border-gray  hover:text-gray py-2 px-6 border border-2-white text-lg font-semibold transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg"
           >
             Read More
           </a>

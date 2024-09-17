@@ -1,15 +1,18 @@
 import React from "react";
 import { useState } from "react";
 import { FaFont } from "react-icons/fa";
+import Imgg from "../assets/react.svg";
 import Pic from "../assets/audi.svg";
 import "animate.css";
 import { CiSearch } from "react-icons/ci";
 import { CiGlobe } from "react-icons/ci";
 import { LiaTimesSolid } from "react-icons/lia";
 import { RxHamburgerMenu } from "react-icons/rx";
+import Car from "../assets/Ncar.png";
 
 const Nav = () => {
   const [menu, setMenu] = useState(false);
+  const [image, setImage] = useState(Pic);
 
   const [men, setMen] = useState(false);
 
@@ -43,7 +46,6 @@ const Nav = () => {
                     style={{ display: !menu ? "none" : "block" }}
                   />{" "}
                   <span style={{ width: "4px" }}></span>
-                  Menu
                 </button>
               </li>
               <li>
@@ -98,16 +100,16 @@ const Nav = () => {
             <div class="max-w-screen-xl flex flex-wrap items-center justify-between  mx-auto p-4">
               <div class=" w-full md:block md:w-auto" id="navbar-default">
                 <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
-                  <li className="block">
+                  <li className="block" onMouseOver={() => setImage(Imgg)}>
                     <a
                       href="#"
-                      class="block py-2 px-3 relative overflow-hidden group text-black-500 transition-all duration-300 ease-in-out
+                      class="block py-2 px-3 relative  overflow-hidden group text-black-500 transition-all duration-300 ease-in-out
  text-black text-start pb-5 pt-5 
  rounded md:bg-transparent md:text-black  md:p-0 dark:text-white md:dark:text-blue-500"
                       aria-current="page"
                     >
                       {" "}
-                      <span class="z-10 bg-left-bottom text-lg  hover:text-shadow-black bg-gradient-to-r from-black to-black bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out">
+                      <span class="z-10 bg-left-bottom text-lg   hover:text-shadow-black bg-gradient-to-r from-black to-black bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out">
                         Company
                       </span>
                     </a>
@@ -121,7 +123,7 @@ const Nav = () => {
                       aria-current="page"
                     >
                       {" "}
-                      <span class="bg-left-bottom text-lg  hover:text-shadow-black bg-gradient-to-r from-black to-black bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out">
+                      <span class="bg-left-bottom text-lg  hover:text-shadow-black bg-gradient-to-r from-black to-black bg-[length:0%_2px] bg-no-repeat block group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out">
                         Innovation
                       </span>
                     </a>
@@ -129,7 +131,7 @@ const Nav = () => {
                   <li className="block">
                     <a
                       href="#"
-                      class="block py-2 px-3 relative overflow-hidden group text-black-500 transition-all duration-300 ease-in-out
+                      class="block py-2 px-3 relative overflow-hidden  group text-black-500 transition-all duration-300 ease-in-out
  text-black text-start pb-5 pt-5 
  rounded md:bg-transparent md:text-black  md:p-0 dark:text-white md:dark:text-blue-500"
                       aria-current="page"
@@ -143,7 +145,7 @@ const Nav = () => {
                   <li className="block">
                     <a
                       href="#"
-                      class="block py-2 px-3 relative overflow-hidden group text-black-500 transition-all duration-300 ease-in-out
+                      class="block py-2 px-3 relative overflow-hidden  group text-black-500 transition-all duration-300 ease-in-out
  text-black text-start pb-5 pt-5 
  rounded md:bg-transparent md:text-black  md:p-0 dark:text-white md:dark:text-blue-500"
                       aria-current="page"
@@ -157,7 +159,7 @@ const Nav = () => {
                   <li className="block">
                     <a
                       href="#"
-                      class="block py-2 px-3 relative overflow-hidden group text-black-500 transition-all duration-300 ease-in-out
+                      class="block py-2 px-3 relative overflow-hidden  group text-black-500 transition-all duration-300 ease-in-out
  text-black text-start pb-5 pt-5 
  rounded md:bg-transparent md:text-black  md:p-0 dark:text-white md:dark:text-blue-500"
                       aria-current="page"
