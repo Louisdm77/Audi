@@ -15,8 +15,6 @@ export const Car = (props) => {
         }
         }`}
         style={{
-          display: props.icon ? "block" : "none",
-          opacity: props.icon ? 1 : 0,
           height: "50px",
           width: "50px",
           marginLeft: props[props.on],
