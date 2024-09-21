@@ -123,7 +123,7 @@ const Nav = () => {
           style={{
             borderRight: "2px solid rgba(128, 128, 128, 0.5)",
             borderLeft: "2px solid rgba(128, 128, 128, 0.5)",
-            display: "block",
+            display: !menu ? "none" : "block",
             borderTop: "2px solid rgba(128, 128, 128, 0.5)",
           }}
           id="mega-menu-full-dropdown"
