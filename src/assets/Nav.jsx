@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import { FaFont } from "react-icons/fa";
 import Imgg from "../assets/react.svg";
@@ -8,13 +8,32 @@ import { CiSearch } from "react-icons/ci";
 import { CiGlobe } from "react-icons/ci";
 import { LiaTimesSolid } from "react-icons/lia";
 import { RxHamburgerMenu } from "react-icons/rx";
-import { FaCarSide } from "react-icons/fa";
+import { Car } from "./Car";
+import { useRef } from "react";
+import { motion } from "framer-motion";
 
 const Nav = () => {
   const [menu, setMenu] = useState(false);
   const [image, setImage] = useState(Pic);
-  const [position, setPosition] = useState("0%");
+  const [on, setOn] = useState("");
   const [men, setMen] = useState(false);
+  const [position, setPosition] = useState({
+    company: "0%",
+    innovation: "0%",
+    sustainability: "0%",
+    careers: "0%",
+    audi: "0%",
+  });
+  const company = useRef(null);
+  const innovation = useRef(null);
+  const sustainability = useRef(null);
+  const careers = useRef(null);
+  const audi = useRef(null);
+  let calc;
+  let innoCalc;
+  let calcc;
+  let careerCalc;
+  let audiCalc;
 
   return (
     <>
@@ -54,22 +73,21 @@ const Nav = () => {
                     />{" "}
                     <span style={{ width: "4px" }}></span>
                   </button>
-                  <FaCarSide
-                    className="car"
-                    style={{
-                      marginLeft: position,
-                      fontSize: "60px ,!important",
-                      position: "relative",
-                      transition: "margin-left 0.5s ease-out",
-                    }}
+                  <Car
+                    company={position.company}
+                    innovation={position.innovation}
+                    sustainability={position.sustainability}
+                    careers={position.careers}
+                    audi={position.audi}
+                    on={on}
                   />
                 </div>
-                <img src={Pic} alt="logo" class="w-40 h-14" />
+                <img src={Pic} alt="logo" class="ima w-40 h-14 lg:mr-2" />
               </li>
 
               <li>
                 <div class="flex flex-wrap items-center justify-between gap-4 w-full ">
-                  <div class="flex items-center ml-auto space-x-6">
+                  <div class="flex items-center marginLeft-auto space-x-6">
                     <button
                       onClick={() => {
                         setMen(!men), setMenu(false);
@@ -105,7 +123,7 @@ const Nav = () => {
           style={{
             borderRight: "2px solid rgba(128, 128, 128, 0.5)",
             borderLeft: "2px solid rgba(128, 128, 128, 0.5)",
-            display: menu ? "block" : "none",
+            display: "block",
             borderTop: "2px solid rgba(128, 128, 128, 0.5)",
           }}
           id="mega-menu-full-dropdown"
@@ -115,13 +133,23 @@ const Nav = () => {
             <div class="max-w-screen-xl flex flex-wrap items-center justify-between  mx-auto p-4">
               <div class=" w-full md:block md:w-auto" id="navbar-default">
                 <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
-                  <li className="block ">
+                  <li ref={company} className="block ">
                     <a
                       onMouseEnter={() => {
-                        setPosition("5%");
+                        setOn("company");
+                        if (company.current) {
+                          calc = company.current.getBoundingClientRect();
+                          console.log(calc);
+                        }
+                        if (calc) {
+                          let newX = calc.x - 25;
+                          console.log(newX);
+                          setPosition({ ...position, company: `${newX}px` });
+                        }
                       }}
                       onMouseLeave={() => {
-                        setPosition("0%");
+                        setOn("");
+                        setPosition({ ...position, company: "0px" });
                       }}
                       href="#"
                       class="block py-2 px-3 relative  overflow-hidden group text-black-500 transition-all duration-300 ease-in-out
@@ -135,34 +163,86 @@ const Nav = () => {
                       </span>
                     </a>
                   </li>
-                  <li className="block">
+                  <li ref={innovation} className="block">
                     <a
                       onMouseEnter={() => {
-                        setPosition("25%");
+                        setOn("innovation");
+                        if (innovation.current) {
+                          innoCalc = innovation.current.getBoundingClientRect();
+                          console.log("calc:", innoCalc);
+                          if (innoCalc) {
+                            let innoCalcML = innoCalc.x - 25;
+                            console.log("new:", innoCalcML);
+                            setPosition({
+                              ...position,
+                              innovation: `${innoCalcML}px`,
+                            });
+                            console.log(position.innovation);
+                          }
+                        }
                       }}
                       onMouseLeave={() => {
-                        setPosition("0%");
+                        setOn("");
+                        setPosition({
+                          ...position,
+                          innovation: `0px`,
+                        });
                       }}
                       href="#"
-                      class="block py-2 px-3 relative overflow-hidden group text-black-500 transition-all duration-300 ease-in-out
+                      class="block py-2 px-3 relative overflow-hidden  group text-black-500 transition-all duration-300 ease-in-out
  text-black text-start pb-5 pt-5 
  rounded md:bg-transparent md:text-black  md:p-0 dark:text-white md:dark:text-blue-500"
                       aria-current="page"
                     >
                       {" "}
-                      <span class="bg-left-bottom text-lg  hover:text-shadow-black bg-gradient-to-r from-black to-black bg-[length:0%_2px] bg-no-repeat block group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out">
+                      <span class="bg-left-bottom text-lg  hover:text-shadow-black bg-gradient-to-r from-black to-black bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out">
                         Innovation
                       </span>
                     </a>
                   </li>
-                  <li className="block">
+                  <li ref={sustainability} className="block">
                     <a
                       onMouseEnter={() => {
-                        setPosition("47%");
+                        setOn("sustainability");
+                        if (sustainability.current) {
+                          calcc =
+                            sustainability.current.getBoundingClientRect();
+                          console.log(calcc);
+                        }
+                        if (calcc) {
+                          let newXX = calcc.x - 25;
+                          console.log(newXX);
+                          setPosition({
+                            ...position,
+                            sustainability: `${newXX}px`,
+                          });
+                        }
                       }}
                       onMouseLeave={() => {
-                        setPosition("0%");
+                        setOn("");
+                        setPosition({ ...position, sustainability: "0px" });
                       }}
+                      //   onMouseEnter={() => {
+                      //     setOn("sustainability");
+                      //     if (sustainability.current) {
+                      //       susCalc =
+                      //         sustainability.current.getBoundingClientRect();
+                      //       console.log("s:", susCalc);
+
+                      //       if (susCalc) {
+                      //         let newSusX = susCalc.x - 25;
+                      //         console.log("x:", susCalc.x);
+                      //         setPosition({
+                      //           ...position,
+                      //           sustainability: `${newSusX}px`,
+                      //         });
+                      //         console.log(newSusX);
+                      //       }
+                      //     }
+                      //   }}
+                      //   onMouseLeave={() => {
+                      //     setPosition({ ...position, sustainability: "0px" });
+                      //   }}
                       href="#"
                       class="block py-2 px-3 relative overflow-hidden  group text-black-500 transition-all duration-300 ease-in-out
  text-black text-start pb-5 pt-5 
@@ -175,7 +255,7 @@ const Nav = () => {
                       </span>
                     </a>
                   </li>
-                  <li className="block">
+                  <li ref={sustainability} className="block">
                     <a
                       onMouseEnter={() => {
                         setPosition("67%");
@@ -245,7 +325,7 @@ const Nav = () => {
               id="button-addon2"
             >
               <svg
-                xmlns="http://www.w3.org/2000/svg"
+                xmarginLeftns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke-width="2"
