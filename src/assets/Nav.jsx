@@ -210,7 +210,7 @@ const Nav = () => {
                           console.log(calcc);
                         }
                         if (calcc) {
-                          let newXX = calcc.x - 25;
+                          let newXX = calcc.x;
                           console.log(newXX);
                           setPosition({
                             ...position,
@@ -222,27 +222,6 @@ const Nav = () => {
                         setOn("");
                         setPosition({ ...position, sustainability: "0px" });
                       }}
-                      //   onMouseEnter={() => {
-                      //     setOn("sustainability");
-                      //     if (sustainability.current) {
-                      //       susCalc =
-                      //         sustainability.current.getBoundingClientRect();
-                      //       console.log("s:", susCalc);
-
-                      //       if (susCalc) {
-                      //         let newSusX = susCalc.x - 25;
-                      //         console.log("x:", susCalc.x);
-                      //         setPosition({
-                      //           ...position,
-                      //           sustainability: `${newSusX}px`,
-                      //         });
-                      //         console.log(newSusX);
-                      //       }
-                      //     }
-                      //   }}
-                      //   onMouseLeave={() => {
-                      //     setPosition({ ...position, sustainability: "0px" });
-                      //   }}
                       href="#"
                       class="block py-2 px-3 relative overflow-hidden  group text-black-500 transition-all duration-300 ease-in-out
  text-black text-start pb-5 pt-5 
@@ -255,13 +234,23 @@ const Nav = () => {
                       </span>
                     </a>
                   </li>
-                  <li ref={sustainability} className="block">
+                  <li ref={careers} className="block">
                     <a
                       onMouseEnter={() => {
-                        setPosition("67%");
+                        setOn("careers");
+                        if (careers.current) {
+                          careerCalc = careers.current.getBoundingClientRect();
+                        }
+                        if (careerCalc) {
+                          let newCareermargin = careerCalc.x - 25;
+                          setPosition({
+                            ...position,
+                            careers: `${newCareermargin}px`,
+                          });
+                        }
                       }}
                       onMouseLeave={() => {
-                        setPosition("0%");
+                        setPosition({ ...position, careers: "0px" });
                       }}
                       href="#"
                       class="block py-2 px-3 relative overflow-hidden  group text-black-500 transition-all duration-300 ease-in-out
@@ -275,13 +264,23 @@ const Nav = () => {
                       </span>
                     </a>
                   </li>
-                  <li className="block">
+                  <li ref={audi} className="block">
                     <a
                       onMouseEnter={() => {
-                        setPosition("87%");
+                        setOn("audi");
+                        if (audi.current) {
+                          audiCalc = audi.current.getBoundingClientRect();
+                        }
+                        if (audiCalc) {
+                          let newAudiMargin = audiCalc.x - 17;
+                          setPosition({
+                            ...position,
+                            audi: `${newAudiMargin}px`,
+                          });
+                        }
                       }}
                       onMouseLeave={() => {
-                        setPosition("0%");
+                        setPosition({ ...position, audi: "0px" });
                       }}
                       href="#"
                       class="block py-2 px-3 relative overflow-hidden  group text-black-500 transition-all duration-300 ease-in-out
