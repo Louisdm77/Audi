@@ -13,6 +13,7 @@ import { useRef } from "react";
 import { motion } from "framer-motion";
 
 const Nav = () => {
+  const [icon, setIcon] = useState(false);
   const [menu, setMenu] = useState(false);
   const [image, setImage] = useState(Pic);
   const [on, setOn] = useState("");
@@ -74,6 +75,8 @@ const Nav = () => {
                     <span style={{ width: "4px" }}></span>
                   </button>
                   <Car
+                    icon={icon}
+                    setIcon={setIcon}
                     company={position.company}
                     innovation={position.innovation}
                     sustainability={position.sustainability}
@@ -129,28 +132,32 @@ const Nav = () => {
           id="mega-menu-full-dropdown"
           class="mine animate__animated animate__fadeInDown mt-0 bg-white  border-gray-200 shadow-sm border-y dark:bg-gray-800 dark:border-gray-600  hidden"
         >
-          <nav class="bg-white border-gray-200 dark:bg-gray-900">
+          <nav class="top bg-white border-gray-200 dark:bg-gray-900">
             <div class="max-w-screen-xl flex flex-wrap items-center justify-between  mx-auto p-4">
               <div class=" w-full md:block md:w-auto" id="navbar-default">
-                <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
-                  <li ref={company} className="block ">
+                <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row space-x-0 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+                  <li
+                    ref={company}
+                    onMouseEnter={() => {
+                      setIcon(true);
+                      setOn("company");
+                      if (company.current) {
+                        calc = company.current.getBoundingClientRect();
+                        console.log(calc);
+                      }
+                      if (calc) {
+                        let newX = calc.x - 25;
+                        console.log(newX);
+                        setPosition({ ...position, company: `${newX}px` });
+                      }
+                    }}
+                    onMouseLeave={() => {
+                      setIcon(false);
+                      setOn("");
+                      setPosition({ ...position, company: "0px" });
+                    }}
+                  >
                     <a
-                      onMouseEnter={() => {
-                        setOn("company");
-                        if (company.current) {
-                          calc = company.current.getBoundingClientRect();
-                          console.log(calc);
-                        }
-                        if (calc) {
-                          let newX = calc.x - 25;
-                          console.log(newX);
-                          setPosition({ ...position, company: `${newX}px` });
-                        }
-                      }}
-                      onMouseLeave={() => {
-                        setOn("");
-                        setPosition({ ...position, company: "0px" });
-                      }}
                       href="#"
                       class="block py-2 px-3 relative  overflow-hidden group text-black-500 transition-all duration-300 ease-in-out
  text-black text-start pb-5 pt-5 
@@ -163,33 +170,37 @@ const Nav = () => {
                       </span>
                     </a>
                   </li>
-                  <li ref={innovation} className="block">
-                    <a
-                      onMouseEnter={() => {
-                        setOn("innovation");
-                        if (innovation.current) {
-                          innoCalc = innovation.current.getBoundingClientRect();
-                          console.log("calc:", innoCalc);
-                          if (innoCalc) {
-                            let innoCalcML = innoCalc.x - 25;
-                            console.log("new:", innoCalcML);
-                            setPosition({
-                              ...position,
-                              innovation: `${innoCalcML}px`,
-                            });
-                            console.log(position.innovation);
-                          }
+                  <li
+                    ref={innovation}
+                    onMouseEnter={() => {
+                      setIcon(true);
+                      setOn("innovation");
+                      if (innovation.current) {
+                        innoCalc = innovation.current.getBoundingClientRect();
+                        console.log("calc:", innoCalc);
+                        if (innoCalc) {
+                          let innoCalcML = innoCalc.x - 25;
+                          console.log("new:", innoCalcML);
+                          setPosition({
+                            ...position,
+                            innovation: `${innoCalcML}px`,
+                          });
+                          console.log(position.innovation);
                         }
-                      }}
-                      onMouseLeave={() => {
-                        setOn("");
-                        setPosition({
-                          ...position,
-                          innovation: `0px`,
-                        });
-                      }}
+                      }
+                    }}
+                    onMouseLeave={() => {
+                      setOn("");
+                      setIcon(false);
+                      setPosition({
+                        ...position,
+                        innovation: `0px`,
+                      });
+                    }}
+                  >
+                    <a
                       href="#"
-                      class="block py-2 px-3 relative overflow-hidden  group text-black-500 transition-all duration-300 ease-in-out
+                      class="block py-2 px-3 relative overflow-hidden group text-black-500 transition-all duration-300 ease-in-out
  text-black text-start pb-5 pt-5 
  rounded md:bg-transparent md:text-black  md:p-0 dark:text-white md:dark:text-blue-500"
                       aria-current="page"
@@ -200,28 +211,31 @@ const Nav = () => {
                       </span>
                     </a>
                   </li>
-                  <li ref={sustainability} className="block">
+                  <li
+                    ref={sustainability}
+                    onMouseEnter={() => {
+                      setIcon(true);
+                      setOn("sustainability");
+                      if (sustainability.current) {
+                        calcc = sustainability.current.getBoundingClientRect();
+                        console.log(calcc);
+                      }
+                      if (calcc) {
+                        let newXX = calcc.x - 10;
+                        console.log(newXX);
+                        setPosition({
+                          ...position,
+                          sustainability: `${newXX}px`,
+                        });
+                      }
+                    }}
+                    onMouseLeave={() => {
+                      setOn("");
+                      setIcon(false);
+                      setPosition({ ...position, sustainability: "0px" });
+                    }}
+                  >
                     <a
-                      onMouseEnter={() => {
-                        setOn("sustainability");
-                        if (sustainability.current) {
-                          calcc =
-                            sustainability.current.getBoundingClientRect();
-                          console.log(calcc);
-                        }
-                        if (calcc) {
-                          let newXX = calcc.x;
-                          console.log(newXX);
-                          setPosition({
-                            ...position,
-                            sustainability: `${newXX}px`,
-                          });
-                        }
-                      }}
-                      onMouseLeave={() => {
-                        setOn("");
-                        setPosition({ ...position, sustainability: "0px" });
-                      }}
                       href="#"
                       class="block py-2 px-3 relative overflow-hidden  group text-black-500 transition-all duration-300 ease-in-out
  text-black text-start pb-5 pt-5 
@@ -234,24 +248,28 @@ const Nav = () => {
                       </span>
                     </a>
                   </li>
-                  <li ref={careers} className="block">
+                  <li
+                    ref={careers}
+                    onMouseEnter={() => {
+                      setOn("careers");
+                      setIcon(true);
+                      if (careers.current) {
+                        careerCalc = careers.current.getBoundingClientRect();
+                      }
+                      if (careerCalc) {
+                        let newCareermargin = careerCalc.x - 32;
+                        setPosition({
+                          ...position,
+                          careers: `${newCareermargin}px`,
+                        });
+                      }
+                    }}
+                    onMouseLeave={() => {
+                      setPosition({ ...position, careers: "0px" });
+                      setIcon(false);
+                    }}
+                  >
                     <a
-                      onMouseEnter={() => {
-                        setOn("careers");
-                        if (careers.current) {
-                          careerCalc = careers.current.getBoundingClientRect();
-                        }
-                        if (careerCalc) {
-                          let newCareermargin = careerCalc.x - 25;
-                          setPosition({
-                            ...position,
-                            careers: `${newCareermargin}px`,
-                          });
-                        }
-                      }}
-                      onMouseLeave={() => {
-                        setPosition({ ...position, careers: "0px" });
-                      }}
                       href="#"
                       class="block py-2 px-3 relative overflow-hidden  group text-black-500 transition-all duration-300 ease-in-out
  text-black text-start pb-5 pt-5 
@@ -264,24 +282,28 @@ const Nav = () => {
                       </span>
                     </a>
                   </li>
-                  <li ref={audi} className="block">
+                  <li
+                    ref={audi}
+                    onMouseEnter={() => {
+                      setOn("audi");
+                      setIcon(true);
+                      if (audi.current) {
+                        audiCalc = audi.current.getBoundingClientRect();
+                      }
+                      if (audiCalc) {
+                        let newAudiMargin = audiCalc.x - 17;
+                        setPosition({
+                          ...position,
+                          audi: `${newAudiMargin}px`,
+                        });
+                      }
+                    }}
+                    onMouseLeave={() => {
+                      setPosition({ ...position, audi: "0px" });
+                      setIcon(false);
+                    }}
+                  >
                     <a
-                      onMouseEnter={() => {
-                        setOn("audi");
-                        if (audi.current) {
-                          audiCalc = audi.current.getBoundingClientRect();
-                        }
-                        if (audiCalc) {
-                          let newAudiMargin = audiCalc.x - 17;
-                          setPosition({
-                            ...position,
-                            audi: `${newAudiMargin}px`,
-                          });
-                        }
-                      }}
-                      onMouseLeave={() => {
-                        setPosition({ ...position, audi: "0px" });
-                      }}
                       href="#"
                       class="block py-2 px-3 relative overflow-hidden  group text-black-500 transition-all duration-300 ease-in-out
  text-black text-start pb-5 pt-5 
