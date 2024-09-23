@@ -6,14 +6,20 @@
   font-family: Roboto;
   src: url(./assets/Roboto-Light.ttf);
 }
-
+@font-face {
+  font-family: Mont;
+  src: url(./assets/Montserrat-Light.ttf);
+}
 #root {
   max-width: 100%;
 }
-.navv,
+.home {
+  font-family: Mont !important;
+}
+/* .navv,
 .hero {
   font-family: Roboto !important;
-}
+} */
 @media screen and (max-width: 768px) {
   .par {
     display: none;
@@ -32,6 +38,19 @@
   }
   .ima {
     margin-left: 45%;
+  }
+  .all {
+    display: block;
+  }
+  .first,
+  .second,
+  .third {
+    width: 100% !important;
+    margin-bottom: 40px;
+  }
+  .img {
+    width: 90% !important;
+    margin: auto;
   }
 }
 

@@ -41,6 +41,10 @@ const HeroSection = () => {
           </a>
         </div>
       </div>
+      <p className="text-center p-4" style={{ fontSize: "10px" }}>
+        A6 Sportback e-tron:Power consumption (combined) in kWh/100 km:
+        15.9–14.0CO₂ emissions (combined) in g/km: 0CO₂ emission class: A
+      </p>
     </div>
   );
 };
