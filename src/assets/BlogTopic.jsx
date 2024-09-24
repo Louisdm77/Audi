@@ -5,7 +5,10 @@ export const BlogTopic = () => {
   return (
     <div>
       <div>
-        <h2 className="mb-5">Current topics from the world of Audi</h2>
+        <h2 className="mb-5 top" style={{ fontSize: "30px", fontWeight: 900 }}>
+          Current topics from the world of Audi
+        </h2>
+        ,
         <div
           className="flex p-4 all"
           style={{ justifyContent: "space-between" }}
@@ -17,8 +20,9 @@ export const BlogTopic = () => {
               style={{ width: "100%", height: "250px" }}
             />
             <div style={{ padding: "20px", boxSizing: "border-box" }}>
-              <p className="text-start">Design &#x2015; 09/02/24</p>
+              <p className="text-start nam">Design &#x2015; 09/02/24</p>
               <h2
+                className="subtop"
                 style={{
                   fontSize: "25px",
                   fontStyle: "oblique",
@@ -40,8 +44,9 @@ export const BlogTopic = () => {
               style={{ width: "100%", height: "250px" }}
             />
             <div style={{ padding: "20px", boxSizing: "border-box" }}>
-              <p className="text-start">Design &#x2015; 08/06/2024</p>
+              <p className="text-start nam">Design &#x2015; 08/06/2024</p>
               <h2
+                className="subtop"
                 style={{
                   fontSize: "25px",
                   fontStyle: "oblique",
@@ -63,8 +68,9 @@ export const BlogTopic = () => {
               style={{ width: "100%", height: "250px" }}
             />
             <div style={{ padding: "20px", boxSizing: "border-box" }}>
-              <p className="text-start">Technologies &#x2015; 07/02/24</p>
+              <p className="text-start nam">Technologies &#x2015; 07/02/24</p>
               <h2
+                className="subtop"
                 style={{
                   fontSize: "25px",
                   fontStyle: "oblique",

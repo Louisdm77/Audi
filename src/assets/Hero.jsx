@@ -15,7 +15,7 @@ const HeroSection = () => {
             class="object-cover object-center w-full "
           /> */}
           <video
-            class="object-cover object-center w-full h-full"
+            class="object-cover object-center w-full h-full vid"
             src={Car}
             autoPlay
             muted
