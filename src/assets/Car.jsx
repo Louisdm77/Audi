@@ -1,5 +1,4 @@
 import React from "react";
-import { FaCarSide } from "react-icons/fa";
 import Cara from "../assets/cara.png";
 export const Car = (props) => {
   return (

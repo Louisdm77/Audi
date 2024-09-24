@@ -98,51 +98,7 @@ nav {
 }
 
 @media screen and (max-width: 375px) {
-  .first,
-  .second,
-  .third {
-    width: 100% !important;
-    margin-bottom: 40px;
-  }
   .subtop {
     font-size: 20px !important;
   }
-}
-
-@media screen and (min-width: 375px) and (max-width: 600px) {
-  .first,
-  .second,
-  .third {
-    width: 80% !important;
-    margin: auto;
-    margin-bottom: 40px;
-  }
-  .all {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-}
-/* @media screen and (min-width: 375px) and (max-width: 800px) {
-  .first,
-  .second,
-  .third {
-    width: 48% !important;
-    margin-bottom: 40px;
-  }
-  .all {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-}
-.first,
-.second,
-.third {
-  width: 32.5 !important;
-  margin-bottom: 40px;
-} */
-.all {
-  display: flex;
-  flex-wrap: wrap;
 }
