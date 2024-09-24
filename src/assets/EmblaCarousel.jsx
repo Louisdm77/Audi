@@ -26,14 +26,10 @@ const EmblaCarousel = (props) => {
     <section className="embla">
       <div className="embla__viewport" ref={emblaRef}>
         <div className="embla__container">
-          {slides.map((index) => (
+          {slides.map((slide, index) => (
             <div className="embla__slide" key={index}>
               <div className="embla__slide__number">
-                <img
-                  className="w-full h-full"
-                  src="https://img.freepik.com/premium-photo/white-sports-car-with-license-plate-that-says-g68_889073-2429.jpg?size=626&ext=jpg&ga=GA1.1.1053587659.1720895076&semt=ais_hybrid"
-                  alt=""
-                />
+                <img className="w-full h-full" src={slide} alt="" />
               </div>
             </div>
           ))}
