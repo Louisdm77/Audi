@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 
 export const usePrevNextButtons = (emblaApi) => {
   const [prevBtnDisabled, setPrevBtnDisabled] = useState(true);
@@ -56,9 +56,26 @@ export const PrevButton = (props) => {
 
 export const NextButton = (props) => {
   const { children, ...restProps } = props;
+  const next = useRef(null);
+
+  const handleSlide = () => {
+    if (next.current) {
+      next.current.focus();
+      next.current.click();
+    }
+  };
+
+  useEffect(() => {
+    let mout = setInterval(() => {
+      handleSlide();
+    }, 7000);
+
+    return () => clearInterval(mout);
+  }, []);
 
   return (
     <button
+      ref={next}
       className="embla__button embla__button--next"
       type="button"
       {...restProps}
