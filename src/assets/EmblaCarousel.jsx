@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { DotButton, useDotButton } from "./EmblaCarouselDotButton";
 import car from "../assets/Ncar.png";
 import {
@@ -12,6 +12,18 @@ const EmblaCarousel = (props) => {
   const { slides, options } = props;
   const [emblaRef, emblaApi] = useEmblaCarousel(options);
 
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  let num = 0;
+  const handleNext = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % slides.length);
+  };
+
+  const handlePrev = () => {
+    setCurrentIndex(
+      (prevIndex) => (prevIndex - 1 + slides.length) % slides.length
+    );
+  };
   const { selectedIndex, scrollSnaps, onDotButtonClick } =
     useDotButton(emblaApi);
 
@@ -26,20 +38,41 @@ const EmblaCarousel = (props) => {
     <section className="embla">
       <div className="embla__viewport" ref={emblaRef}>
         <div className="embla__container">
-          {slides.map((slide, index) => (
-            <div className="embla__slide" key={index}>
-              <div className="embla__slide__number">
-                <img className="w-full h-full " src={slide} alt="" />
+          {slides.map((slide, index) => {
+            return (
+              <div className="embla__slide" key={index}>
+                <div className="embla__slide__number">
+                  <img
+                    style={{
+                      filter: index == currentIndex ? "" : "blur(5px)",
+                    }}
+                    className="w-full h-full "
+                    src={slide.url}
+                    alt={slide.alt}
+                  />
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
 
       <div className="embla__controls">
         <div className="embla__buttons">
-          <PrevButton onClick={onPrevButtonClick} disabled={prevBtnDisabled} />
-          <NextButton onClick={onNextButtonClick} disabled={nextBtnDisabled} />
+          <PrevButton
+            onClick={() => {
+              onPrevButtonClick();
+              handlePrev();
+            }}
+            disabled={prevBtnDisabled}
+          />
+          <NextButton
+            onClick={() => {
+              onNextButtonClick();
+              handleNext();
+            }}
+            disabled={nextBtnDisabled}
+          />
         </div>
 
         <div className="embla__dots">
