@@ -1,8 +1,8 @@
 ("use client");
-import React, { useState } from "react";
-import EmblaCarousel from "./EmblaCarousel";
-import "../assets/embla.css";
-import "../assets/base.css";
+import React, { useState, useRef } from "react";
+// import EmblaCarousel from "./EmblaCarousel";
+// import "../assets/embla.css";
+// import "../assets/base.css";
 const OPTIONS = { loop: true };
 const SLIDE_COUNT = 5;
 const SLIDES = [
@@ -30,6 +30,9 @@ const SLIDES = [
 ];
 
 export const BlogTopic = () => {
+  // const topic = useRef(null);
+  // const observer = new ScrollObserver();
+  // observer.observe(topic.current, null, "zoomIn");
   return (
     <div>
       <div>
