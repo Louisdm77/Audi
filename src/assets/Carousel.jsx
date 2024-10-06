@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import Mont from "../assets/Montserrat-Light.ttf";
+import Pop from "../assets/Poppins-ExtraBold.ttf";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";
@@ -61,12 +62,12 @@ function Carousel() {
         grabCursor={false}
         centeredSlides={true}
         loop={true}
-        slidesPerView={"auto"}
+        slidesPerView={3.5}
+        spaceBetween={10}
         coverflowEffect={{
           rotate: 0,
           stretch: 0,
-          //   depth: 100,
-          //   modifier: 4,
+
           depth: 200,
           modifier: 1.5,
           slideShadows: true,
@@ -104,13 +105,13 @@ function Carousel() {
                 justifyContent: "space-between",
               }}
             >
-              <span style={{ fontSize: "20px" }}>
+              <span style={{ fontSize: "15px", marginTop: 0 }}>
                 Design - Arthur Shnenmann
               </span>
             </p>
           </span>
         </SwiperSlide>
-        <SwiperSlide>
+        <SwiperSlide className="animate_animated animate_slideInLeft">
           <img
             src="https://images.unsplash.com/photo-1646405871744-2005e64f8e32?q=80&w=1460&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             alt="slide_image"
@@ -134,13 +135,13 @@ function Carousel() {
                 justifyContent: "space-between",
               }}
             >
-              <span style={{ fontSize: "20px" }}>
+              <span style={{ fontSize: "15px", marginTop: 0 }}>
                 Design - Arthur Shnenmann
               </span>
             </p>
           </span>
         </SwiperSlide>
-        <SwiperSlide>
+        <SwiperSlide className="animate_animated animate_slideInLeft">
           <img
             src="https://images.unsplash.com/photo-1618849985511-7dbc48d7d2e4?q=80&w=1530&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             alt="slide_image"
@@ -164,13 +165,13 @@ function Carousel() {
                 justifyContent: "space-between",
               }}
             >
-              <span style={{ fontSize: "20px" }}>
+              <span style={{ fontSize: "15px", marginTop: 0 }}>
                 Design - Arthur Shnenmann
               </span>
             </p>
           </span>
         </SwiperSlide>
-        <SwiperSlide>
+        <SwiperSlide className="animate_animated animate_slideInLeft">
           <img
             src="https://images.unsplash.com/photo-1540066019607-e5f69323a8dc?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGF1ZGl8ZW58MHx8MHx8fDA%3D"
             alt="slide_image"
@@ -194,13 +195,13 @@ function Carousel() {
                 justifyContent: "space-between",
               }}
             >
-              <span style={{ fontSize: "20px" }}>
+              <span style={{ fontSize: "15px", marginTop: 0 }}>
                 Design - Arthur Shnenmann
               </span>
             </p>
           </span>
         </SwiperSlide>
-        <SwiperSlide>
+        <SwiperSlide className="animate_animated animate_slideInLeft">
           <img
             src="https://images.unsplash.com/photo-1527593167147-e9c94a5883e6?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8YXVkaSUyMHdpdGglMjBwZW9wbGV8ZW58MHx8MHx8fDA%3D"
             alt="slide_image"
@@ -224,13 +225,13 @@ function Carousel() {
                 justifyContent: "space-between",
               }}
             >
-              <span style={{ fontSize: "20px" }}>
+              <span style={{ fontSize: "15px", marginTop: 0 }}>
                 Design - Arthur Shnenmann
               </span>
             </p>
           </span>
         </SwiperSlide>
-        <SwiperSlide>
+        <SwiperSlide className="animate_animated animate_slideInLeft">
           <img
             src="https://images.unsplash.com/photo-1680079583684-e54913747cd6?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8YXVkaSUyMHdpdGglMjBwZW9wbGV8ZW58MHx8MHx8fDA%3D"
             alt="slide_image"
@@ -254,13 +255,13 @@ function Carousel() {
                 justifyContent: "space-between",
               }}
             >
-              <span style={{ fontSize: "20px" }}>
+              <span style={{ fontSize: "15px", marginTop: 0 }}>
                 Design - Arthur Shnenmann
               </span>
             </p>
           </span>
         </SwiperSlide>
-        <SwiperSlide>
+        <SwiperSlide className="animate_animated animate_slideInLeft">
           <img
             src="https://img.freepik.com/premium-photo/yellow-car-with-logo-front-is-shown_1308172-566372.jpg?size=626&ext=jpg&ga=GA1.2.1053587659.1720895076&semt=ais_hybrid"
             alt="slide_image"
@@ -284,7 +285,7 @@ function Carousel() {
                 justifyContent: "space-between",
               }}
             >
-              <span style={{ fontSize: "20px" }}>
+              <span style={{ fontSize: "15px", marginTop: 0 }}>
                 Design - Arthur Shnenmann
               </span>
             </p>

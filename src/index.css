@@ -21,6 +21,7 @@
 .hero {
   font-family: Roboto !important;
 } */
+
 @media screen and (max-width: 768px) {
   .par {
     display: none;
