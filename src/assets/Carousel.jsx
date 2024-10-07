@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import Mont from "../assets/Montserrat-Light.ttf";
-import Pop from "../assets/Poppins-ExtraBold.ttf";
+import Inter from "../assets/Inter_18pt-Bold.ttf";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";
@@ -52,9 +52,12 @@ function Carousel() {
       className="container"
       //   onMouseEnter={handleMouseOver}
       //   onMouseLeave={handleMouseAway}
-      style={{ fontFamily: Mont }}
+      style={{ fontFamily: Inter }}
     >
-      <h2 className="mb-5 top" style={{ fontSize: "30px", fontWeight: 900 }}>
+      <h2
+        className="mb-5 top"
+        style={{ fontSize: "30px", fontWeight: 900, fontFamily: Inter }}
+      >
         Current topics from the world of Audi
       </h2>
       <Swiper
@@ -90,10 +93,9 @@ function Carousel() {
             <h3
               style={{
                 fontSize: "3.5rem",
-                fontWeight: "900",
+
                 // fontStyle: "oblique",
                 height: "70%",
-                fontStyle: "italic",
               }}
             >
               'Audi screams luxury'
@@ -120,10 +122,9 @@ function Carousel() {
             <h3
               style={{
                 fontSize: "3.5rem",
-                fontWeight: "900",
+
                 // fontStyle: "oblique",
                 height: "70%",
-                fontStyle: "italic",
               }}
             >
               Audi compliments your riches
@@ -150,10 +151,9 @@ function Carousel() {
             <h3
               style={{
                 fontSize: "3.5rem",
-                fontWeight: "900",
+
                 // fontStyle: "oblique",
                 height: "70%",
-                fontStyle: "italic",
               }}
             >
               "Four Rings, One Promise: Excellence"
@@ -180,10 +180,9 @@ function Carousel() {
             <h3
               style={{
                 fontSize: "3.5rem",
-                fontWeight: "900",
+
                 // fontStyle: "oblique",
                 height: "70%",
-                fontStyle: "italic",
               }}
             >
               "Driven by Luxury, Powered by Performance"
@@ -210,10 +209,9 @@ function Carousel() {
             <h3
               style={{
                 fontSize: "3.5rem",
-                fontWeight: "900",
+
                 // fontStyle: "oblique",
                 height: "70%",
-                fontStyle: "italic",
               }}
             >
               "Innovative Intelligence: Audi's Technological Edge"
@@ -240,10 +238,9 @@ function Carousel() {
             <h3
               style={{
                 fontSize: "3.5rem",
-                fontWeight: "900",
+
                 // fontStyle: "oblique",
                 height: "70%",
-                fontStyle: "italic",
               }}
             >
               "Gearing Up for Greatness"
@@ -270,10 +267,9 @@ function Carousel() {
             <h3
               style={{
                 fontSize: "3.5rem",
-                fontWeight: "900",
+
                 // fontStyle: "oblique",
                 height: "70%",
-                fontStyle: "italic",
               }}
             >
               24 hours at the Audi charging hub in Nuremberg

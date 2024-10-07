@@ -1,6 +1,6 @@
 @font-face {
-  font-family: "Pop";
-  src: url("../assets/Poppins-ExtraBold.ttf") format("truetype");
+  font-family: "    Inter";
+  src: url("../assets/Inter_18pt-Bold.ttf") format("truetype");
 }
 
 *,
@@ -76,6 +76,10 @@ body {
   text-align: center;
 }
 
+.top {
+  font-family: Inter;
+  font-size: 50px !important;
+}
 .swiper_container {
   height: 90vh;
   padding: 2rem 1rem;
@@ -120,6 +124,7 @@ body {
     /* background-color: rgba(255, 255, 255, 0.8); */
     padding: 10px;
     border-radius: 10px;
+
     /* box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); */
     /* box-shadow: 0 0 5px rgba(80, 71, 71, 0.2); */
   }
@@ -260,7 +265,7 @@ a {
   font-size: 4.5rem !important;
 }
 .swiper-slide .drp {
-  font-family: Pop;
+  font-family: Inter !important;
   top: 110%;
   width: 900px;
   height: 220px;
