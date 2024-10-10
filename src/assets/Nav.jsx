@@ -10,6 +10,7 @@ import { LiaTimesSolid } from "react-icons/lia";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { Car } from "./Car";
 import { useRef } from "react";
+import "../assets/Carousel.css";
 
 const Nav = () => {
   const [icon, setIcon] = useState(false);
