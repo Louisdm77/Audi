@@ -1,42 +1,99 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGauge, faBolt } from "@fortawesome/free-solid-svg-icons";
-import car from "../assets/audd.png";
+import car from "../assets/cara.png";
 import "../assets/Carousel.css";
-import { inView } from "motion";
-
+import { inView } from "framer-motion";
+import AOS from "aos";
+import "aos/dist/aos.css";
+// ..
+AOS.init();
 const Carousel = () => {
   const all = useRef(null);
+  const carr = useRef(null);
   const [func, setFunc] = useState(true);
   const [hover, setHover] = useState(true);
   const [ovy, setOvy] = useState(true);
+  const [rep, setRep] = useState("0%");
   inView(
     all.current,
     inView("#carousel li", (info) => {
       animate(info.target, { opacity: 1 });
     })
   );
+
+  useEffect(() => {
+    let move = setInterval(() => {
+      if (rep === "0%") {
+        setRep("90%");
+      } else {
+        setRep("0%");
+      }
+    }, 3000);
+
+    return () => clearInterval(move);
+  }, [rep]);
+
   return (
-    <div ref={all} className="mother">
+    <div
+      ref={all}
+      className="mother"
+      data-aos="fade-right"
+      data-aos-delay="50"
+      data-aos-duration="2000"
+    >
       <div
+        className="al"
         style={{
           borderLeft: "1px solid white",
           height: "fit-content",
-          width: "30%",
           padding: "30px",
           marginLeft: "50px",
           textAlign: "left",
+          display: "flex",
+          justifyContent: "space-between",
+          border: "1px solid white",
         }}
       >
-        <h2 style={{ fontWeight: 900, fontSize: "1.5rem" }}>
-          Take a journey, <br /> bend to space
-        </h2>
-        <p style={{ fontSize: "0.8rem" }}>
-          "Accelerate into the horizon, engine purring, wheels scorching
-          asphalt. Precision-crafted machines merge style, performance, and
-          adrenaline, propelling drivers into an unbridled freedom, where roads
-          unfold and limits disappear."
-        </p>
+        <div
+          className="col1"
+          style={{ width: "30%", border: "1px solid white" }}
+        >
+          <h2 style={{ fontWeight: 900, fontSize: "1.5rem" }}>
+            Take a journey, <br /> bend to space
+          </h2>
+          <p style={{ fontSize: "0.8rem" }}>
+            "Accelerate into the horizon, engine purring, wheels scorching
+            asphalt. Precision-crafted machines merge style, performance, and
+            adrenaline, propelling drivers into an unbridled freedom, where
+            roads unfold and limits disappear."
+          </p>
+        </div>
+        <div className="col2" style={{ color: "white", marginTop: "20px" }}>
+          <h1
+            style={{
+              fontWeight: 900,
+              fontSize: "2.5rem",
+              fontStyle: "italic",
+            }}
+          >
+            HOP IN !, JOIN THE JOURNEY.
+          </h1>
+          <img
+            data-aos="fade-in"
+            data-aos-delay="50"
+            data-aos-duration="3000"
+            ref={carr}
+            src={car}
+            alt="car"
+            style={{
+              height: "60px",
+              width: "60px",
+              marginLeft: rep,
+              transition: "all 1s ease",
+            }}
+          />
+        </div>
       </div>
       <div className="row">
         <div className="col" style={{ width: "20%" }}>

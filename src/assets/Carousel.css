@@ -2,6 +2,10 @@
   font-family: Inter;
   src: url(../assets/Montserrat-Light.ttf);
 }
+@font-face {
+  font-family: Pop;
+  src: url(../assets/Poppins-Light.ttf);
+}
 .mother {
   font-family: Inter;
   background-color: rgb(37, 36, 36);
@@ -22,4 +26,29 @@
   background: linear-gradient(to right, #3974e0, #ffffff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+h1 {
+  font-family: Pop;
+}
+
+@media screen and (max-width: 1111px) {
+  .col2 {
+    width: 40%;
+  }
+  .col1 {
+    width: 60%;
+  }
+}
+@media screen and (max-width: 1111px) {
+  .col2 {
+    display: none;
+  }
+  .col1 {
+    width: 100%;
+    margin: auto;
+  }
+  .al {
+    margin-left: 0;
+    padding: 0%;
+  }
 }
