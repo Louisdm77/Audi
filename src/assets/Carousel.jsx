@@ -10,7 +10,12 @@ const Carousel = () => {
   const [func, setFunc] = useState(true);
   const [hover, setHover] = useState(true);
   const [ovy, setOvy] = useState(true);
-  inView(all.current, callback);
+  inView(
+    all.current,
+    inView("#carousel li", (info) => {
+      animate(info.target, { opacity: 1 });
+    })
+  );
   return (
     <div ref={all} className="mother">
       <div
