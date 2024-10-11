@@ -1,172 +1,109 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGauge, faBolt } from "@fortawesome/free-solid-svg-icons";
 import car from "../assets/audd.png";
 import "../assets/Carousel.css";
+import { inView } from "motion";
 
 const Carousel = () => {
+  const all = useRef(null);
   const [func, setFunc] = useState(true);
   const [hover, setHover] = useState(true);
   const [ovy, setOvy] = useState(true);
+  inView(all.current, callback);
   return (
-    <div
-      className="row"
-      style={{
-        display: "flex",
-        justifyContent: "space-between",
-        padding: "30px",
-        boxSizing: "border-box",
-      }}
-    >
+    <div ref={all} className="mother">
       <div
-        className="col"
-        style={{ width: "30%", height: "300px" }}
-        onMouseEnter={() => {
-          setFunc(false);
-        }}
-        onMouseLeave={() => {
-          setFunc(true);
+        style={{
+          borderLeft: "1px solid white",
+          height: "fit-content",
+          width: "30%",
+          padding: "30px",
+          marginLeft: "50px",
+          textAlign: "left",
         }}
       >
-        <div
-          className="nu animate__animated animate__fadeIn"
-          style={{
-            height: "100%",
-            width: "100%",
-            borderRadius: "10px",
-            color: "white",
-            fontSize: "25px",
-            fontWeight: 900,
-            display: func ? "block" : "none",
-          }}
-        >
-          <h1 style={{ marginTop: "30px" }}>Functionality Meets Art</h1>
-        </div>
-        <div
-          className="animate__animated animate__fadeIn"
-          style={{
-            height: "100%",
-            width: "100%",
-            borderRadius: "10px",
-            color: "black",
-            display: func ? "none" : "block",
-            padding: "10px",
-
-            fontSize: "15px",
-          }}
-        >
-          Audi's innovative design harmonizes form and function. Sleek
-          exteriors, luxurious interiors, and advanced technology come together
-          in perfect symphony. Quattro all-wheel drive, intuitive infotainment
-          systems, and precision craftsmanship define the ultimate driving
-          experience. Where every curve serves a purpose, Audi's artistry
-          elevates functionality to new heights. Experience the fusion of
-          innovation and elegance."
-        </div>
+        <h2 style={{ fontWeight: 900, fontSize: "1.5rem" }}>
+          Take a journey, <br /> bend to space
+        </h2>
+        <p style={{ fontSize: "0.8rem" }}>
+          "Accelerate into the horizon, engine purring, wheels scorching
+          asphalt. Precision-crafted machines merge style, performance, and
+          adrenaline, propelling drivers into an unbridled freedom, where roads
+          unfold and limits disappear."
+        </p>
       </div>
-      <div className="row" style={{ width: "30%", height: "300px" }}>
-        <div
-          className="col"
-          style={{
-            height: "30%",
-            marginBottom: "30px",
-            boxShadow: "none",
-            background: "none",
-          }}
-        >
-          {/* <small style={{ fontSize: "12px", color: "gray" }}>
-            <p style={{ textAlign: "start" }}>with AUDI</p>
-          </small>
-          COMPLIMENT YOUR RICHES */}
-          <img src={car} alt="" style={{ height: "100%" }} />
-        </div>
-        <div
-          className="col"
-          style={{ height: "60%" }}
-          onMouseEnter={() => {
-            setHover(false);
-          }}
-          onMouseLeave={() => {
-            setHover(true);
-          }}
-        >
-          <div
-            className="animate__animated animate__fadeIn"
+      <div className="row">
+        <div className="col" style={{ width: "20%" }}>
+          <h1
+            className="log"
             style={{
-              height: "100%",
-              width: "100%",
-              borderRadius: "10px",
-              color: "black",
-              fontSize: "17px",
-              display: hover ? "flex" : "none",
-              alignItems: "center",
+              fontSize: "3rem",
               fontWeight: 900,
             }}
           >
-            What Makes the Audi Q5's Wheels So Special? We Asked Andreas
-            Valencia Polle
-          </div>{" "}
+            A6
+          </h1>
           <div
-            className="animate__animated animate__fadeIn"
             style={{
-              height: "100%",
-              width: "100%",
-              borderRadius: "10px",
-              color: "black",
-              display: hover ? "none" : "block",
-              padding: "10px",
-
-              fontSize: "15px",
+              textAlign: "left",
+              marginLeft: "10px",
+              paddingTop: "10px",
             }}
           >
-            "The Audi Q5's wheels boast concave designs, varied sizes (17"-22"),
-            and customization options. High-performance capabilities ensure
-            exceptional handling and braking. - Andreas Valencia Polle"
+            <h6 style={{ fontWeight: 700 }}>AGILITY</h6>
+            <p style={{ fontSize: "0.6rem" }}>
+              "Swift, sleek, and responsive, precision on wheels."
+            </p>
           </div>
         </div>
-      </div>
-      <div
-        className="col"
-        style={{ width: "30%", height: "300px" }}
-        onMouseEnter={() => {
-          setOvy(false);
-        }}
-        onMouseLeave={() => {
-          setOvy(true);
-        }}
-      >
-        {" "}
-        <div
-          className="animate__animated animate__fadeIn"
-          style={{
-            height: "100%",
-            width: "100%",
-            borderRadius: "10px",
-            color: "black",
-            fontSize: "17px",
-            display: ovy ? "flex" : "none",
-            alignItems: "center",
-            fontWeight: 900,
-          }}
-        >
-          "Sculpted for Speed: The Audi Q5's Wheel Design Story"
-        </div>{" "}
-        <div
-          className="animate__animated animate__fadeIn"
-          style={{
-            height: "100%",
-            width: "100%",
-            borderRadius: "10px",
-            color: "black",
-            display: ovy ? "none" : "block",
-            padding: "10px",
-            fontSize: "15px",
-          }}
-        >
-          " The Audi Q5's wheel design combines style and performance. Concave
-          shapes and precision-cut spokes reduce weight, enhancing acceleration
-          and handling. Available in 17"-22" sizes, with customizable finishes,
-          the Q5's wheels balance elegance and athleticism. Inspired by
-          motorsport, every detail optimizes aerodynamics and stability.
-          Experience the fusion of form and function."
+        <div className="col" style={{ width: "20%" }}>
+          <h1
+            className="log"
+            style={{
+              fontSize: "3rem",
+              fontWeight: 900,
+              color: "#3974e0",
+            }}
+          >
+            <FontAwesomeIcon icon={faGauge} />
+          </h1>
+          <div
+            style={{
+              textAlign: "left",
+              marginLeft: "10px",
+              paddingTop: "10px",
+            }}
+          >
+            <h6 style={{ fontWeight: 700 }}>PERFORMANCE</h6>
+            <p style={{ fontSize: "0.6rem" }}>
+              "Swift, sleek, and responsive, precision on wheels."
+            </p>
+          </div>
+        </div>
+        <div className="col" style={{ width: "20%" }}>
+          <h1
+            className="log"
+            style={{
+              fontSize: "3rem",
+              fontWeight: 900,
+              color: "linear-gradient(to right, #3974e0, #ffffff)",
+            }}
+          >
+            <FontAwesomeIcon icon={faBolt} />
+          </h1>
+          <div
+            style={{
+              textAlign: "left",
+              marginLeft: "10px",
+              paddingTop: "10px",
+            }}
+          >
+            <h6 style={{ fontWeight: 700 }}>CUTTING EDGE</h6>
+            <p style={{ fontSize: "0.6rem" }}>
+              "Swift, sleek, and responsive, precision on wheels."
+            </p>
+          </div>
         </div>
       </div>
     </div>
