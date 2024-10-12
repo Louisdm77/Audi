@@ -58,3 +58,30 @@ h1 {
     padding-left: 10px;
   }
 }
+
+@media screen and (max-width: 950px) {
+  .label {
+    flex-wrap: wrap;
+  }
+  .col11,
+  .col22,
+  .col3,
+  .col4 {
+    width: 40% !important;
+  }
+}
+@media screen and (max-width: 525px) {
+  .label {
+    flex-wrap: wrap;
+  }
+  .col11,
+  .col22,
+  .col3,
+  .col4 {
+    width: 100% !important;
+  }
+  .col1 {
+    width: 100% !important;
+    border: none;
+  }
+}

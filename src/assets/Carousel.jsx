@@ -39,13 +39,14 @@ const Carousel = () => {
       <div
         className="al"
         style={{
-          borderLeft: "1px solid blue",
+          borderLeft: "2px solid black",
           height: "fit-content",
           padding: "30px",
           marginLeft: "50px",
           textAlign: "left",
           display: "flex",
           justifyContent: "space-between",
+          borderRight: "2px solid black",
         }}
         data-aos="fade-right"
         data-aos-delay="50"
@@ -89,12 +90,12 @@ const Carousel = () => {
         </div>
       </div>
       <div
-        className="row"
+        className="row label"
         data-aos="fade-in-top"
         data-aos-delay="50"
         data-aos-duration="2000"
       >
-        <div className="col" style={{ width: "20%" }}>
+        <div className="col col11" style={{ width: "25%" }}>
           <h1
             className="log"
             style={{
@@ -117,7 +118,7 @@ const Carousel = () => {
             </p>
           </div>
         </div>
-        <div className="col" style={{ width: "20%" }}>
+        <div className="col col22" style={{ width: "25%" }}>
           <h1
             className="log"
             style={{
@@ -141,13 +142,37 @@ const Carousel = () => {
             </p>
           </div>
         </div>
-        <div className="col" style={{ width: "20%" }}>
+        <div className="col col3" style={{ width: "25%" }}>
           <h1
             className="log"
             style={{
               fontSize: "3rem",
               fontWeight: 900,
-              color: "linear-gradient(to right, #3974e0, #ffffff)",
+              color: "#3974e0",
+            }}
+          >
+            <FontAwesomeIcon icon={faBolt} />
+          </h1>
+          <div
+            style={{
+              textAlign: "left",
+              marginLeft: "10px",
+              paddingTop: "10px",
+            }}
+          >
+            <h6 style={{ fontWeight: 700 }}>CUTTING EDGE</h6>
+            <p style={{ fontSize: "0.6rem" }}>
+              "Swift, sleek, and responsive, precision on wheels."
+            </p>
+          </div>
+        </div>
+        <div className="col col4" style={{ display: "noe" }}>
+          <h1
+            className="log"
+            style={{
+              fontSize: "3rem",
+              fontWeight: 900,
+              color: "#3974e0",
             }}
           >
             <FontAwesomeIcon icon={faBolt} />
