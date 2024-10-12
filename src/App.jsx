@@ -3,6 +3,7 @@ import Nav from "./assets/Nav";
 import HeroSection from "./assets/Hero";
 import { BlogTopic } from "./assets/BlogTopic";
 import Carousel from "./assets/Carousel";
+import Models from "./assets/models";
 
 export default function App() {
   return (
@@ -11,6 +12,7 @@ export default function App() {
       <HeroSection />
       {/* <BlogTopic /> */}
       <Carousel />
+      <Models />
     </div>
   );
 }
