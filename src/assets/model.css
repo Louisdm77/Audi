@@ -1,0 +1,17 @@
+@media screen and (max-width: 1105px) {
+  .imgholder {
+    display: block !important;
+  }
+  .imgholder img {
+    width: 100% !important;
+  }
+}
+@media screen and (min-width: 1508px) {
+  .imgholder {
+    display: block !important;
+  }
+  .imgholder .img {
+    width: 100% !important;
+    height: 200px !important;
+  }
+}

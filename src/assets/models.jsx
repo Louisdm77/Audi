@@ -1,12 +1,13 @@
 import React from "react";
+import "../assets/model.css";
 const models = () => {
   return (
     <div>
       <h2 style={{ fontWeight: "bold", fontSize: "40px" }}>
         Discover our models
       </h2>
-      <div className="row md:w-full" style={{ textAlign: "start" }}>
-        <div className="w-46 md:w-full p-6 border-box">
+      <div className="row imgholder md:w-full" style={{ textAlign: "start" }}>
+        <div className="img w-full p-6 border-box">
           <img
             style={{ width: "100%", height: "auto" }}
             src="https://img.freepik.com/free-photo/black-jeep-is-parked-desert-with-other-cars_1340-35824.jpg?t=st=1728725022~exp=1728728622~hmac=4afa6a30edbed95eea6c3a26c5fb43bf258f781072f2ffad45691bc2fe982f6b&w=740"
