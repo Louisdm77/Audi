@@ -35,30 +35,23 @@ const Carousel = () => {
   }, [rep]);
 
   return (
-    <div
-      ref={all}
-      className="mother"
-      data-aos="fade-right"
-      data-aos-delay="50"
-      data-aos-duration="2000"
-    >
+    <div ref={all} className="mother">
       <div
         className="al"
         style={{
-          borderLeft: "1px solid white",
+          borderLeft: "1px solid blue",
           height: "fit-content",
           padding: "30px",
           marginLeft: "50px",
           textAlign: "left",
           display: "flex",
           justifyContent: "space-between",
-          border: "1px solid white",
         }}
+        data-aos="fade-right"
+        data-aos-delay="50"
+        data-aos-duration="2000"
       >
-        <div
-          className="col1"
-          style={{ width: "30%", border: "1px solid white" }}
-        >
+        <div className="col1" style={{ width: "30%" }}>
           <h2 style={{ fontWeight: 900, fontSize: "1.5rem" }}>
             Take a journey, <br /> bend to space
           </h2>
@@ -69,7 +62,7 @@ const Carousel = () => {
             roads unfold and limits disappear."
           </p>
         </div>
-        <div className="col2" style={{ color: "white", marginTop: "20px" }}>
+        <div className="col2" style={{ color: "black", marginTop: "20px" }}>
           <h1
             style={{
               fontWeight: 900,
@@ -95,7 +88,12 @@ const Carousel = () => {
           />
         </div>
       </div>
-      <div className="row">
+      <div
+        className="row"
+        data-aos="fade-in-top"
+        data-aos-delay="50"
+        data-aos-duration="2000"
+      >
         <div className="col" style={{ width: "20%" }}>
           <h1
             className="log"

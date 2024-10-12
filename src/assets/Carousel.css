@@ -8,8 +8,9 @@
 }
 .mother {
   font-family: Inter;
-  background-color: rgb(37, 36, 36);
-  color: white;
+  /* background-color: rgb(37, 36, 36); */
+  background-color: white;
+  color: black;
   padding: 20px;
   padding-left: 100px;
 }
@@ -44,11 +45,16 @@ h1 {
     display: none;
   }
   .col1 {
-    width: 100%;
+    width: 60% !important;
     margin: auto;
   }
   .al {
     margin-left: 0;
+    border-left: 1px solid white;
     padding: 0%;
+  }
+  .mother {
+    padding: 20px;
+    padding-left: 10px;
   }
 }
